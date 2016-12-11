@@ -36,6 +36,7 @@ module.exports = {
                 port: this.port,
                 path: reqObj.path || this.option.path,
                 method: this.option.method,
+                rejectUnauthorized: this.https.rejectUnauthorized,
                 headers: Object.assign({}, this.option.headers, reqObj.headers)
             },
             self = this
