@@ -36,9 +36,9 @@ module.exports = {
                 port: this.port,
                 path: reqObj.path || this.option.path,
                 method: this.option.method,
-                rejectUnauthorized: reqObj.option.rejectUnauthorized === undefined
+                rejectUnauthorized: reqObj.rejectUnauthorized === undefined
                                     ? this.option.rejectUnauthorized
-                                    : reqObj.option.rejectUnauthorized,
+                                    : reqObj.rejectUnauthorized,
                 headers: Object.assign({}, this.option.headers, reqObj.headers)
             },
             self = this
