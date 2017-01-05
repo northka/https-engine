@@ -36,12 +36,26 @@ module.exports = {
                 port: this.port,
                 path: reqObj.path || this.option.path,
                 method: this.option.method,
-                rejectUnauthorized: reqObj.rejectUnauthorized === undefined
-                                    ? this.option.rejectUnauthorized
-                                    : reqObj.rejectUnauthorized,
-                headers: Object.assign({}, this.option.headers, reqObj.headers)
+                rejectUnauthorized : reqObj.rejectUnauthorized === undefined
+                                     ? this.option.rejectUnauthorized === undefined ? true : false
+                                     : reqObj.rejectUnauthorized,
+                pfx                : reqObj.pfx            || this.option.pfx            || null,
+                key                : reqObj.key            || this.option.key            || null,
+                auth               : reqObj.auth           || this.option.auth           || null,
+                passphrase         : reqObj.passphrase     || this.option.passphrase     || null,
+                cert               : reqObj.cert           || this.option.cert           || null,
+                ciphers            : reqObj.ciphers        || this.option.ciphers        || undefined,
+                secureProtocol     : reqObj.secureProtocol || this.option.secureProtocol || undefined,
+                servername         : reqObj.servername     || this.option.servername     || undefined,
+                headers            : Object.assign({}, this.option.headers, reqObj.headers)
             },
             self = this
+        if(this.option.pfx ||  reqObj.pfx){
+            Object.assign(option, {
+
+            })
+        }
+
         let query = parseParams(reqObj.params)
         if(option.method.toUpperCase() === 'GET'){
 			if(option.path.indexOf('?') < 0){
