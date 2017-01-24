@@ -1,6 +1,7 @@
 /**
  * Created by northka.chen on 2016/12/9.
  */
+
 const queryString  = require('querystring')
 const https         = require('https')
 
@@ -128,7 +129,7 @@ module.exports = {
                 }
             }else{
                 reqObj.headers = {}
-                reqObj.headers['Cookie'] = cookies
+                reqObj.headers['cookie'] = cookies
             }
         }
     }
