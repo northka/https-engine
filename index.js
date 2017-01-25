@@ -1,7 +1,6 @@
 /**
  * Created by northka.chen on 2016/12/9.
  */
-
 const queryString  = require('querystring')
 const https         = require('https')
 
